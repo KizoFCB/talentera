@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Talentera</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+        margin: 0;
+      }
+
+      .navbarContainer {
+        width: 100%;
+        height: 30px;
+        background-color: black;
+      }
+      .appBarContainer {
+        display: flex;
+        width: 100%;
+        gap: 16px;
+      }
+      .navItem {
+        padding: 3px;
+        text-decoration: none;
+        color: white;
+        max-height: 25px;
+        background-color: black;
+      }
+      .selectContainer {
+        border: none;
+        cursor: pointer;
+      }
+      .homeNavItem {
+        background-color: green;
+      }
+      .heroContainer {
+        position: relative;
+      }
+      .heroItem {
+        position: absolute;
+        bottom: 12px;
+        left: 8px;
+        background-color: black;
+        padding-block: 6px;
+        width: 150px;
+        height: 30px;
+        color: white;
+        font-size: 24px;
+        text-align: center;
+      }
+      .teamContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 18px;
+      }
+      .teamMembersContainer {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 32px;
+      }
+      .teamMember {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+      .teamMember p {
+        margin: 0;
+      }
+      .teamMember > p:first-of-type {
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .workContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        padding: 32px;
+        background-color: dimgray;
+        color: white;
+        position: relative;
+      }
+      .workItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+        height: 450px;
+        gap: 16px;
+        background-color: white;
+        color: black;
+      }
+      .sectionItems {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        width: 100%;
+        gap: 16px;
+      }
+      .sectionItems * {
+        margin: 0;
+        padding-left: 8px;
+      }
+      .floatingWorkItem {
+        position: absolute;
+        right: 16px;
+        bottom: -16px;
+        height: 35px;
+        width: 35px;
+        text-align: center;
+        background-color: lightseagreen;
+        border-radius: 50%;
+      }
+      .contactContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: beige;
+        padding-inline: 16px;
+        height: 400px;
+      }
+      .formContainer {
+        background-color: white;
+        height: 250px;
+        width: 800px;
+        box-shadow: 1px 1px 4px 1px grey;
+        padding: 16px;
+      }
+      .inputsContainer {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .inputContainer{
+        width: 100%;
+        border: none;
+        min-height: 40px;
+      }
+      .inputContainer::placeholder{
+        color: black;
+      }
+      .submitButton{
+        background-color: black;
+        color: white;
+        height: 30px;
+        cursor: pointer;
+      }
+      .footerContainer{
+        background-color: black;
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding-block: 16px;
+      }
+      .socialIcons{
+        display: flex;
+        gap: 16px;
+      }
+      .socialIcons i{
+        cursor: pointer;
+        height: 25px;
+        width: 25px;
+        padding-top: 12px;
+        padding-left: 12px;
+        background-color: lightseagreen;
+      }
+      #scrollButton {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbarContainer">
+      <div class="appBarContainer">
+        <a href="#" class="navItem homeNavItem"
+          ><i class="fa fa-home" style="margin-right: 16px"></i>Logo</a
+        >
+        <a href="#team" class="navItem">Team</a>
+        <a href="#work" class="navItem">Work</a>
+        <a href="#price" class="navItem">Price</a>
+        <a href="#contact" class="navItem">Contact</a>
+        <div class="navItem">
+          <select name="Dropdown" id="dropdown" class="navItem selectContainer">
+            <option value="">Dropdown</option>
+            <option value="1">Item1</option>
+            <option value="2">Item2</option>
+            <option value="3">Item3</option>
+          </select>
+        </div>
+        <a
+          href="javascript:void(0)"
+          class="navItem"
+          style="margin-left: auto; padding-right: 8px"
+          ><i class="fa fa-search"></i
+        ></a>
+      </div>
+    </header>
+
+    <!-- Page content -->
+    <main style="width: 100%;">
+      <!-- Hero Section -->
+      <section class="heroContainer">
+        <img src="/assets/hero.jpg" style="width: 100%; height: 500px" />
+        <div class="heroItem">Talentera</div>
+      </section>
+
+      <!-- The Team Section -->
+      <section class="teamContainer" id="team">
+        <h2>OUR TEAM</h2>
+        <p>Meet the team - our office rats:</p>
+        <div class="teamMembersContainer">
+          <div class="teamMember">
+            <img
+              src="/assets/team-1.jpg"
+              style="width: 200px; height: 200px; border-radius: 50%"
+            />
+
+            <p>Islam AlZatary</p>
+            <p>Web Designer</p>
+          </div>
+          <div class="teamMember">
+            <img
+              src="/assets/team-2.jpg"
+              style="width: 200px; height: 200px; border-radius: 50%"
+            />
+
+            <p>Tayseer Emam</p>
+            <p>Support</p>
+          </div>
+          <div class="teamMember">
+            <img
+              src="/assets/team-3.jpg"
+              style="width: 200px; height: 200px; border-radius: 50%"
+            />
+
+            <p>Eman Subhi</p>
+            <p>Boss man</p>
+          </div>
+          <div class="teamMember">
+            <img
+              src="/assets/team-4.jpg"
+              style="width: 200px; height: 200px; border-radius: 50%"
+            />
+
+            <p>Reem Yakoub</p>
+            <p>Fixer</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Work Section --> 
+      <section class="workContainer" id="work">
+        <div style="min-width: 350px; align-self: start">
+          <h2>Our Work</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        <div class="workItem">
+          <img
+            src="/assets/customer-1.jpg"
+            alt="customer 1"
+            style="width: 350px; height: 220px"
+          />
+          <div class="sectionItems">
+            <h3>Customer 1</h3>
+            <p>Trade</p>
+            <p>Blablablablabla</p>
+            <p>Blablablablabla</p>
+            <p>Blablablablabla</p>
+            <p>Blablablablabla</p>
+          </div>
+        </div>
+        <div class="workItem">
+          <img
+            src="/assets/customer-2.jpg"
+            alt="customer 2"
+            style="width: 350px; height: 220px"
+          />
+          <div class="sectionItems">
+            <h3>Customer 2</h3>
+            <p>Trade</p>
+            <p>Blablablablabla</p>
+            <p>Blablablablabla</p>
+            <p>Blablablablabla</p>
+            <p>Blablablablabla</p>
+          </div>
+        </div>
+        <div class="workItem">
+          <img
+            src="/assets/customer-3.jpg"
+            alt="customer 3"
+            style="width: 350px; height: 220px"
+          />
+          <div class="sectionItems">
+            <h3>Customer 3</h3>
+            <p>Trade</p>
+            <p>Blablablablabla</p>
+            <p>Blablablablabla</p>
+            <p>Blablablablabla</p>
+            <p>Blablablablabla</p>
+          </div>
+        </div>
+        <div class="floatingWorkItem">
+          <i class="fa fa-plus" style="padding-top: 10px"></i>
+        </div>
+      </section>
+
+      <!-- The Contact Section -->
+      <section class="contactContainer" id="contact">
+        <div style="align-self: start;margin-top: 70px;">
+          <h2 style="border-bottom: 8px solid lightseagreen; display: inline">
+            Contact Us
+          </h2>
+          <h3>Address</h3>
+          <p>Swing by for a cup of coffee or whatever.</p>
+          <div>
+            <div>
+              <i
+                class="fa fa-map-marker"
+                style="width: 30px; color: lightseagreen"
+              ></i>
+              Amman, Jordan<br />
+              <i
+                class="fa fa-phone"
+                style="width: 30px; color: lightseagreen"
+              ></i>
+              Phone: +962 79 0000000<br />
+              <i
+                class="fa fa-envelope-o"
+                style="width: 30px; color: lightseagreen"
+              >
+              </i>
+              Email: test@test.com<br />
+            </div>
+          </div>
+        </div>
+        <div class="formContainer">
+          <form action="/" target="_blank" class="inputsContainer">
+            <input
+              class="inputContainer"
+              type="text"
+              placeholder="Name"
+              required
+              name="Name"
+            />
+            <hr style="width: 100%;"/>
+            <input
+              class="inputContainer"
+              type="text"
+              placeholder="Email"
+              required
+              name="Email"
+            />
+            <hr style="width: 100%;"/>
+            <input
+              class="inputContainer"
+              type="text"
+              placeholder="Message"
+              required
+              name="Message"
+            />
+            <hr style="width: 100%;"/>
+            <div style="width:100%;display: flex;justify-content: space-between;">
+            <div>
+              <input 
+              type="checkbox" 
+              id="checkbox" 
+              name="like"
+              required
+              />
+              <label for="checkbox">I Like it!</label>
+            </div>
+            <button
+              class="submitButton"
+              type="submit"
+            >
+             Send
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <button onclick="topFunction()" id="scrollButton"><i class="fa fa-arrow-up" style="color: white;"></i></button>
+      <!-- End Page Content -->
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="footerContainer"
+    >
+    <p>Follow Us</p>
+    <div class="socialIcons">
+      <i class="fa fa-facebook" style="color: white;"></i>
+      <i class="fa fa-twitter" style="color: white;"></i>
+      <i class="fa fa-google-plus" style="color: white;"></i>
+      <i class="fa fa-instagram" style="color: white;"></i>
+      <i class="fa fa-linkedin" style="color: white;"></i>
+    </div>
+    </footer>
+
+    <script>
+     // Get the button
+     let mybutton = document.getElementById("scrollButton");
+
+     // When the user scrolls down 20px from the top of the document, show the button
+     window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+         mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+     document.body.scrollTop = 0;
+     document.documentElement.scrollTop = 0;
+    }
+
+      // Used to toggle the menu on small screens when clicking on the menu button
+      function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+  </body>
+</html>
